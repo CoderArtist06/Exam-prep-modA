@@ -416,3 +416,17 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+
+# Eseguibili compilati
+*.exe
+*.out
+*.o
+*.obj
+
+# File temporanei di compilazione
+*.log
+*.tmp
+
+# Eseguibili Linux (senza estensione, generati da gcc)
+main
+a.out

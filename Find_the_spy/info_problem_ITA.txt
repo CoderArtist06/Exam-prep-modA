@@ -1,0 +1,45 @@
+TESTO
+
+In un laboratorio di un centro di ricerca sottomarinno è stato commesso un omicidio. 
+Probabilmente uno degli scienziati in realtà è una spia. Gli scienziati che lavorano 
+nel laboratorio sono al più 100; per cercare di restringered il numero di possibili 
+sospetti al più 100; per cercare du restrigere il numero di possibili sospetti, si è 
+deciso di controllare chi, fra i vari scienziati, era di turno nel laboratorio 
+nell'orario dell'omicidio.
+
+il file di testo turni.txt contiene il turno di ciascuno scienzato; per ogni scienzato
+si ha:
+    - cognome dello scienziato: stringa contenente al massimo 20 char
+    - ora di inizio del turno: intero
+    - ora di fine del turno: intero
+    - stato: stringa contenente al massimo 5 caratteri
+
+
+ESERCIZIO 1 (14 punti):
+
+- Si scriva un programma C che legge da tastiera un'ora (intera) ed elenca gli scienziati
+  che erano in laboratorio a quell'ora. Si organizzi il programma come segue.
+- 1. Nel main, si invochi una funzione di lettura (da Sviluppare al punto 2), una stampa 
+  (da sviluppare al punto 3), poi si legga da tastiera l'orario dell'omicidio e si invochi
+  una funzione di visualizzazione dei sospetti (punto 4).
+- 2. La funzione di lettura deve leggere il file turni.txt e portarne il contenuto in un 
+  opportuno array di struttore.
+- 3. La funzione di stampa deve visualizzare a video l'array letto al punto 2.
+- 4. La funzione di visualizzazione dei sospetti deve mostrare a video tutti gli scienziati
+  che erano in laboratorio all'ora dell'omicidio.
+
+ESERCIZIO 2 (2 punti):
+
+- Si aggiunga ora una funzione, da invocare nel main, che crea un nuovo array contenente i
+  turni degli scienziati presenti in laboratorio nel momento dell'omicidio. Nel main, si stampi
+  questo nuovo array usando la funzione di stampa scritta al punto 2 dell'esecizio 1.
+
+ESERCIZIO 3 (4 punti):
+
+- Oltre all'omicidio, si è scoperto che la spia ha anche avvelenato alcuni dei suoi colleghi, 
+  che erano presenti con lui in laboratorio. Nel file turni.txt, gli scienzati avvelenati sono
+  segnalati con la stringa "AVV" nel hanno il campo "stato".
+- Evidentemente la spia è lo scienzato (non avvelenato) il cui turno si interseca con tutti i
+  turni degli scienzati avvelenati.
+- Si trovi il nome della spia organizzando opportunamente la soluzione in funzione (almeno 3).
+- Nel main, si stampi il nome della spia.
