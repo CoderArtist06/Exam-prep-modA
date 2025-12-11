@@ -1,0 +1,3 @@
+Il file contiene gruppi da 3 interi per riga:
+a b c
+Calcola per ogni riga la somma e stampala.

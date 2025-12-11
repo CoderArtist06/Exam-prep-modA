@@ -1,0 +1,2 @@
+Apri misure.txt che contiene un float per riga.
+Trova il massimo usando un ciclo while.

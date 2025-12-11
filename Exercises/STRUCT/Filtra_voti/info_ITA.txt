@@ -1,0 +1,1 @@
+Stampa solo gli studenti con voto ≥ 7.

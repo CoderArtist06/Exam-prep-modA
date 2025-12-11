@@ -1,0 +1,1 @@
+Leggi parole.txt e conta quante righe contiene.

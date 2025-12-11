@@ -1,0 +1,32 @@
+Archivio Pazienti (file binario) (è stato generato da una LLM)
+
+È disponibile il file binario pazienti.bin che contiene un elenco di pazienti:
+- cognome (max 20 char)
+- età (int)
+- codice reparto (int tra 1 e 10)
+- gravità (int tra 1 e 5)
+I pazienti sono al più 100.
+
+ESERCIZIO 1 (14 punti)
+
+Scrivere un programma C strutturato che:
+1. Nel main invochi:
+    - funzione di lettura (binaria)
+    - funzione di stampa
+    - poi legga un numero di reparto inserito dall’utente e invochi una funzione che mostra solo i pazienti di quel reparto.
+2. La funzione di lettura deve usare fread e caricare le strutture in un array.
+3. La funzione di stampa deve visualizzare l’array completo.
+4. La funzione di filtro deve mostrare solo pazienti con codiceReparto == quelloInserito.
+
+ESERCIZIO 2 (2 punti)
+
+Scrivere una funzione che crea un secondo file di testo, chiamato critici.txt, in cui salvare tutti i pazienti con gravità ≥ 4.
+Il file deve essere scritto con fprintf.
+
+ESERCIZIO 3 (4 punti)
+
+Si definisce "paziente prioritario" quello con:
+- gravità massima
+- in caso di pari gravità, età maggiore
+Scrivere una funzione che restituisce tramite passaggio per riferimento l’indice del paziente prioritario.
+Nel main stamparne cognome, età e gravità.

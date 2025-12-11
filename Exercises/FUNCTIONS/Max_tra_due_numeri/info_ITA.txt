@@ -1,0 +1,2 @@
+Scrivi una funzione che restituisce il maggiore tra i due interi.
+Nel main: leggi due numeri da tastiera e stampa il risultato.

@@ -1,0 +1,1 @@
+Conta quanti elementi ci sono in un file binario.

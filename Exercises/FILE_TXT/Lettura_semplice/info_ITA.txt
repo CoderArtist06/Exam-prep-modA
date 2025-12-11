@@ -1,0 +1,2 @@
+Leggi da numeri.txt una serie di interi (uno per riga) finché il file finisce.
+Stampa la somma.

@@ -1,0 +1,1 @@
+Leggi a.txt e b.txt e scrivi un unico file unito.txt con il contenuto dei due.

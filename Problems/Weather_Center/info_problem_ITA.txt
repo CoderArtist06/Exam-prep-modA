@@ -1,0 +1,31 @@
+Centro Meteo (file di testo) (è stato generato da una LLM)
+
+Contenuto del file stazioni.txt:
+Per ogni stazione meteo registrata in un giorno:
+- nome stazione (max 20 char)
+- temperatura minima (int)
+- temperatura massima (int)
+- stato apparecchiatura (stringa 3 char, es: "OK", "OFF", "ERR")
+Le stazioni totali sono al più 120.
+
+ESERCIZIO 1 (12 punti)
+
+Scrivere un programma C organizzato in funzioni che:
+1. nel main invochi:
+    - una funzione di lettura dal file (punto 2)
+    - una funzione di stampa (punto 3)
+    - poi chieda la soglia minima accettabile e invochi una funzione che visualizzi solo le stazioni con "minima < soglia".
+2. La funzione di lettura deve leggere stazioni.txt e caricare i dati in un array di struct.
+3. La funzione di stampa deve visualizzare a video l’intero array.
+4. La funzione di filtraggio deve mostrare solo le stazioni che hanno avuto una temperatura minima sotto la soglia data dall’utente.
+
+ESERCIZIO 2 (3 punti)
+
+Aggiungere una funzione che crea un nuovo array contenente solo le stazioni con stato "ERR".
+Nel main, stamparlo usando la funzione di stampa del punto 3.
+
+ESERCIZIO 3 (5 punti)
+
+La stazione "più instabile" del giorno è quella con la differenza maggiore tra temperatura massima e minima.
+Scrivere una funzione che trova questa stazione e restituisce l’indice via passaggio per riferimento.
+Nel main stamparne il nome e la differenza.

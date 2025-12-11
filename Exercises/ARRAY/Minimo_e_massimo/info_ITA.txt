@@ -1,0 +1,1 @@
+Trova min e max in un array di float usando solo if.

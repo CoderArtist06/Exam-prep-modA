@@ -1,0 +1,1 @@
+Scrivi una funzione che restituisce il valore più piccolo dell’array (float).

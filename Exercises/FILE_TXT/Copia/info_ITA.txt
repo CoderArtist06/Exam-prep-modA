@@ -1,0 +1,1 @@
+Copia il contenuto di input.txt dentro output.txt.

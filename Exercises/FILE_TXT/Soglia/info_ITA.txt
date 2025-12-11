@@ -1,0 +1,2 @@
+Leggi da temperatura.txt dei numeri interi.
+Stampa solo quelli maggiore della media.

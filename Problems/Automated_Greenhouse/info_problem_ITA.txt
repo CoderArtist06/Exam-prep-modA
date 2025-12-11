@@ -1,0 +1,108 @@
+Breve introduzione narrativa (è stato generato da una LLM)
+
+Una serra automatizzata sperimenta coltivazioni sperimentali con piante 
+sensibili a umidità e temperatura. Durante una settimana di prova si sono 
+verificati malfunzionamenti nell’impianto di irrigazione e alcuni settori 
+della serra hanno subito stress idrico. Per ricostruire responsabilità e capire 
+chi fosse in servizio nei momenti critici, lo studente deve scrivere un programma 
+in C che lavori con array di strutture, funzioni (passaggio per valore e per riferimento), 
+cicli e condizioni, e che legga/scriva sia file di testo sia file binari. 
+Il programma deve essere modulare: il main invoca funzioni di lettura, stampa, filtro e analisi.
+
+
+Specifica dei file
+
+File binario: operatori.bin
+Contiene fino a 100 record consecutivi di tipo struttura C. Ogni record ha i seguenti campi (in questo ordine):
+- cognome: char[21] (stringa terminata da \0, massimo 20 caratteri)
+- inizio: int (ora di inizio turno, intero)
+- fine: int (ora di fine turno, intero)
+- area: char[11] (es. "SETTOREA", massimo 10 caratteri)
+- certificazione: char[6] (es. "CERT" o "NO", massimo 5 caratteri)
+
+File di testo: irrigazioni.txt
+Ogni riga descrive un evento di irrigazione con il formato:
+<id_evento> <ora> <area> <esito>
+dove id_evento è una stringa senza spazi, ora è un intero, area è una stringa e esito è "OK" o "FAIL". 
+
+Requisiti generali
+- Massimo operatori: 100.
+- Il main deve orchestrare chiamate a funzioni di lettura, stampa, filtro e analisi; mantenere il main compatto.
+- Usare array di strutture, almeno 6 funzioni diverse, passaggio per valore e passaggio per riferimento (es. per restituire il numero di record letti).
+- Gestire apertura/chiusura file e segnalare errori di I/O.
+- Commentare brevemente le funzioni principali (una riga ciascuna).
+- Specificare la convenzione per turni che passano la mezzanotte se gestiti.
+Esempio di struttura consigliata:
+typedef struct {
+  char cognome[21];
+  int inizio;
+  int fine;
+  char area[11];
+  char certificazione[6];
+} Operatore;
+
+
+Esercizio 1 Lettura e ricerca per orario 14 punti
+
+Traccia
+- Scrivere una funzione che legga operatori.bin e carichi i record in un array Operatore op[100]. 
+  La funzione deve restituire tramite parametro per riferimento il numero di record letti.
+- Scrivere una funzione che stampi a video l’elenco completo degli operatori con colonne allineate.
+- Leggere da tastiera un’ora intera e visualizzare tutti gli operatori presenti a quell’ora 
+  (condizione: inizio <= ora < fine, gestire eventuale passaggio oltre mezzanotte con la convenzione scelta). 
+  La ricerca e la stampa dei presenti devono essere in una funzione separata.
+
+Funzioni richieste (esempi di prototipi):
+- int leggi_operatori(const char *nomefile, Operatore arr[], int max, int *nlett);
+- void stampa_operatori(const Operatore arr[], int n);
+- void mostra_presenti(const Operatore arr[], int n, int ora);
+Criteri di valutazione
+- Lettura binaria e gestione errori: 5 punti.
+- Stampa formattata: 3 punti.
+- Individuazione e visualizzazione dei presenti: 6 punti.
+
+
+Esercizio 2 Filtro e salvataggio 2 punti
+
+Traccia
+Aggiungere una funzione che costruisca un nuovo array contenente solo gli operatori presenti a una data ora. 
+Restituire la dimensione del nuovo array tramite parametro per riferimento. Stampare il nuovo array usando la 
+funzione di stampa. Salvare inoltre il nuovo array in un file di testo presenti_serra.txt con una riga per 
+operatore nel formato leggibile.
+Funzioni richieste:
+- void filtra_presenti(const Operatore src[], int nsrc, Operatore dst[], int *ndst, int ora);
+- int salva_presenti_testo(const char *nomefile, const Operatore arr[], int n);
+Criteri di valutazione
+- Funzione di filtro e uso passaggio per riferimento: 1 punto.
+- Salvataggio su file di testo corretto: 1 punto.
+
+
+Esercizio 3 Individuazione del responsabile delle irrigazioni fallite 4 punti
+
+Traccia
+Dal file irrigazioni.txt estrarre le ore e le aree degli eventi con esito == "FAIL". Si assume che per ogni 
+evento fallito esista almeno un operatore in servizio nell’area corrispondente. Il responsabile è definito come 
+l’operatore con certificazione "CERT" il cui turno si interseca con tutti gli orari di failure per la stessa area 
+(cioè per ogni evento fallito in quell’area, l’operatore era in servizio). Se più operatori soddisfano la condizione, 
+stampare tutti i loro cognomi; se nessuno soddisfa, stampare un messaggio appropriato.
+Organizzazione richiesta
+- Funzione per leggere irrigazioni.txt e raccogliere in array le ore e le aree degli eventi FAIL.
+- Funzione che verifica se un operatore copre tutte le ore di failure per una data area (dimostrare passaggio per valore e per riferimento in almeno una funzione).
+- Funzione che cerca e stampa i candidati responsabili per ogni area con eventi FAIL.
+Criteri di valutazione
+- Lettura corretta di irrigazioni.txt: 1 punto.
+- Algoritmo che verifica intersezione con tutti gli orari e individua i candidati: 2 punti.
+- Stampa del risultato e gestione casi limite: 1 punto.
+
+Bonus e consegna
+Bonus opzionali fino a 2 punti extra
+- Scrivere il sottoinsieme dei presenti in un file binario presenti.bin con lo stesso layout della struttura originale: +1 punto.
+- Implementare una funzione che dimostri esplicitamente il passaggio per valore (ad esempio una funzione che riceve una copia di Operatore, 
+  la modifica e la restituisce senza alterare l’array originale): +1 punto.
+Indicazioni pratiche e suggerimenti
+- Usare fread/fwrite per i file binari e fscanf/fprintf per i file di testo.
+- Controllare sempre i ritorni di fopen, fread, fwrite, fscanf.
+- Documentare in 1–2 righe la strategia per la ricerca del responsabile.
+- Consegnare il file sorgente .c compilabile con gcc e indicare eventuali flag.
+Punteggio totale utile 20 punti più fino a 2 punti bonus. La valutazione terrà conto di correttezza funzionale, modularità, gestione errori 
+e chiarezza della stampa a video.

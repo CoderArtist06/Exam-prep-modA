@@ -1,0 +1,2 @@
+Array di 10 -> struct Persona { char nome[20]; int eta; };
+Calcola l'età media.

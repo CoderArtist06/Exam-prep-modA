@@ -1,0 +1,1 @@
+Scrivi una funzione che restituisce quante vocali ci sono nella stringa.

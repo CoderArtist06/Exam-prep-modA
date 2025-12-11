@@ -1,0 +1,2 @@
+Il file divisori.txt contiene una serie di interi.
+Stampa quanti sono divisibili per 3.

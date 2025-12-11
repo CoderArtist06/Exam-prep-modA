@@ -1,0 +1,1 @@
+Inverti un array (senza usare un secondo array, solo scambi).

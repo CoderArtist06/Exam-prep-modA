@@ -1,0 +1,1 @@
+Trova l’elemento che compare più volte (array piccolo, 20 elementi).

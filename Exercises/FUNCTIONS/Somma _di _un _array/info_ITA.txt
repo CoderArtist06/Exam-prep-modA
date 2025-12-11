@@ -1,0 +1,3 @@
+(passaggio per riferimento)
+
+Scrivi una funzione che calcola la somma degli n elementi dell’array e la restituisce tramite puntatore.

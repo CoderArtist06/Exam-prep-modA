@@ -1,0 +1,1 @@
+Da un file binario di interi salva in piccoli.bin solo quelli minori di 50.

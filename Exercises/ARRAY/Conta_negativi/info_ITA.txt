@@ -1,0 +1,1 @@
+Dato un array di 20 int generati da te, conta quanti sono negativi.

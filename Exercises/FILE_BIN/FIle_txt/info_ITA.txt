@@ -1,0 +1,5 @@
+Leggi p.bin contenente:
+(nome persona) (età)
+(nome persona) (età)
+(*5)
+Crea un file di testo con nome e età su ogni riga.

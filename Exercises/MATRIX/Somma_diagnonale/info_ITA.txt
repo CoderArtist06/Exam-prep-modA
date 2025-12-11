@@ -1,0 +1,1 @@
+Dati 5×5 interi, calcola la somma della diagonale principale.

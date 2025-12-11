@@ -1,0 +1,1 @@
+Riempi un array di 5 studenti e stampali.

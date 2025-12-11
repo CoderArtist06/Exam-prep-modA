@@ -1,0 +1,38 @@
+Agenzia di Trasporti (file di testo + output multipli) (è stato generato da una LLM)
+
+È dato il file di testo corse.txt, che contiene l’elenco delle corse effettuate da diversi autisti:
+- nome autista (max 20 char)
+- km percorsi (float)
+- codice veicolo (int)
+- stato corsa (stringa max 4 char: "OK", "RIT", "CAN")
+Gli autisti totali sono al più 50.
+
+ESERCIZIO 1 (13 punti)
+
+Scrivere un programma in C strutturato così:
+1. Nel main invocare:
+    - funzione di lettura
+    - funzione di stampa
+    - poi chiedere un codice veicolo e chiamare una funzione che mostra tutte le corse effettuate con quel veicolo.
+2. Funzione di lettura: carica l'intero file in un array di struct.
+3. Funzione di stampa: stampa tutto l’array.
+4. Funzione di filtro: stampa le corse con codiceVeicolo == input.
+
+ESERCIZIO 2 (3 punti)
+
+Scrivere una funzione che crea file di testo diversi, uno per ogni codice veicolo trovato.
+Ogni file deve chiamarsi:
+                                    veicolo_<codice>.txt
+e contenere le corse relative.
+
+ESERCIZIO 3 (4 punti)
+
+Si definisce "autista modello" colui che:
+- non ha mai una corsa con stato "CAN"
+- e ha totalizzato più km di tutti gli altri autisti "puliti"
+Scrivere una funzione che:
+- riceve l’array
+- calcola i km totali per autista
+- determina l’autista modello
+- restituisce il suo nome al main (tramite passaggio per riferimento o return)
+Nel main stamparne il nome e i km totali.

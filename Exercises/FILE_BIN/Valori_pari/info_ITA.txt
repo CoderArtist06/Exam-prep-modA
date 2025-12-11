@@ -1,0 +1,1 @@
+Leggi da un file binario numeri int e stampa solo quelli pari.
