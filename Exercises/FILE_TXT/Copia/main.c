@@ -24,6 +24,7 @@ void gestioneFile() {
     dst = fopen("output.txt", "w");
     if (dst == NULL) {
         printf("ERRORE nel file output.txt\n");
+        exit(-1);
     }
 
     copiaFile(src, dst);
